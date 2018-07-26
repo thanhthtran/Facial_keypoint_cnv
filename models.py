@@ -25,11 +25,11 @@ class Net(nn.Module):
         self.drop_out2 = nn.Dropout(p=0.2)
         self.drop_out3 = nn.Dropout(p=0.3)
         self.drop_out4 = nn.Dropout(p=0.4)
-        self.drop_out5 = nn.Dropout(p=0.5)
-        self.drop_out6 = nn.Dropout(p=0.6)
+        self.drop_out5 = nn.Dropout(p=0.4)
+        self.drop_out6 = nn.Dropout(p=0.4)
         # Dense layer 1-3
-        self.fc1 = nn.Linear(12*12*256, 1000)
-        self.fc2 = nn.Linear(1000, 1000)
+        self.fc1 = nn.Linear(12*12*256, 6400)
+        self.fc2 = nn.Linear(6400, 1000)
         self.fc3 = nn.Linear(1000, 136)
         # Max pooling layer
         self.pool = nn.MaxPool2d(2, 2)
