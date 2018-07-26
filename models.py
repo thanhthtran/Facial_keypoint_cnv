@@ -18,7 +18,8 @@ class Net(nn.Module):
         self.conv1 = nn.Conv2d(1, 32, 4)
         self.conv2 = nn.Conv2d(32,64,3)
         self.conv3 = nn.Conv2d(64,128,2)
-        self.conv4 = nn.Conv2d(128,256,1)
+        self.conv4 = nn.Conv2d(128,256,2)
+
         #Drop out layer 1-6
         self.drop_out1 = nn.Dropout(p=0.1)
         self.drop_out2 = nn.Dropout(p=0.2)
@@ -27,7 +28,7 @@ class Net(nn.Module):
         self.drop_out5 = nn.Dropout(p=0.5)
         self.drop_out6 = nn.Dropout(p=0.6)
         # Dense layer 1-3
-        self.fc1 = nn.Linear(6400, 1000)
+        self.fc1 = nn.Linear(12*12*256, 1000)
         self.fc2 = nn.Linear(1000, 1000)
         self.fc3 = nn.Linear(1000, 136)
         # Max pooling layer
